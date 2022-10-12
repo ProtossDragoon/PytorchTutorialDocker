@@ -1,0 +1,11 @@
+version: '2.0'
+services:
+  train-and-eval:
+    image: pytorch-tutorial-docker:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: ./result
+        target: /ws/result
