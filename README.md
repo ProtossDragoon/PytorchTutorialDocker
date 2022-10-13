@@ -10,7 +10,7 @@ cd PytorchTutorialDocker
 docker-compose up
 ```
 
-- CIFAR-10 데이터셋으로 훈련된 간단한 파이토치 모델이 컨테이너에서 학습이 진행됩니다.
+- 컨테이너 환경에서 간단한 파이토치 분류모델이 CIFAR-10 데이터셋을 바탕으로 학습됩니다.
 - 모델 가중치는 `PytorchTutorialDocker/result` 디렉터리에 `network.pt` 파일로 저장됩니다.
 
 ## Log
