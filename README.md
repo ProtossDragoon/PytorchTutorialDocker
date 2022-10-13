@@ -1,6 +1,6 @@
 # Pytorch Image Classification Tutorial with Docker
 
-[pytorch classification tutorial](https://tutorials.pytorch.kr/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py) 을 기반으로 작성한 간단한 소스 코드를 docker 환경에서 실행합니다.
+[pytorch classification tutorial](https://tutorials.pytorch.kr/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py) 을 기반으로 작성한 간단한 소스 코드를 docker 환경에서 실행합니다. [cifar-10 브랜치](https://github.com/ProtossDragoon/PytorchTutorialDocker/tree/cifar10)에는 [해당 튜토리얼](https://tutorials.pytorch.kr/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py)에 나타나 있는 것처럼 cifar-10 데이터를 사용하지만, 이 브랜치에서는 cifar-10 이 아닌 커스텀 데이터에 coco 포맷을 적용해 데이터를 로드합니다.
 
 ## Command
 
