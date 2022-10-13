@@ -3,7 +3,7 @@ import os
 
 # 프로젝트
 from config import CONFIG
-from model import Network
+from model import ClassificationNetwork
 
 # 서드파티
 import loader
@@ -27,15 +27,17 @@ def imshow(img):
 
 
 def eval(test_data_loader):
-    network = Network()
+    network = ClassificationNetwork(test_data_loader.dataset.n_class)
     network.load_state_dict(torch.load(os.path.join(CONFIG.model_save_dir, CONFIG.model_name)))
     images, labels = next(iter(test_data_loader))
     outputs = network(images)
+    _, gts = torch.max(labels, 1)
     _, predicted = torch.max(outputs, 1)
-    print('GT:\t', ' '.join(f'{CONFIG.classes[labels[j]]:5s}' for j in range(CONFIG.batch_size)))
-    print('PRED:\t', ' '.join(f'{CONFIG.classes[predicted[j]]:5s}' for j in range(CONFIG.batch_size)))
+    for j in range(CONFIG.batch_size):
+        print(f'\nGroundTruth:\t {test_data_loader.dataset.categories[gts[j]]["name"]}')
+        print(f'Predicted:\t {test_data_loader.dataset.categories[predicted[j]]["name"]}')
     # imshow(torchvision.utils.make_grid(images))
     
     
 if __name__ == '__main__':
-    eval(loader.CIFAR10.test_data_loader)
+    eval(loader.ClassificatonCOCODataLoader(CONFIG.coco_test_path).data_loader)

@@ -1,4 +1,7 @@
+tqdm
+pycocotools
 torch
 torchvision
 dotmap
 matplotlib
+imagesize
